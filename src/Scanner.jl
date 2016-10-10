@@ -1,6 +1,6 @@
 module Scanner
 
-export Scan, nextint
+export Scan, nextint, nextarray, nextmatrix
 
 include("types.jl")
 include("numerics.jl")

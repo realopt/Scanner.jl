@@ -2,10 +2,12 @@ _0 = 0x30
 _9 = 0x39
 _MINUS = 0x2D
 
-function nextint64(s::Scan)
+import Base.next
+
+function next{T<:Integer}(s::Scan, ::Type{T})
     debug = false
     b = UInt8(0)
-    num = Int64(0)
+    num = T(0)
     minus = false
     while ( !eof(s.is))
         b = read(s.is, UInt8)
@@ -30,23 +32,23 @@ function nextint64(s::Scan)
     minus ? -num : num
 end
 
-function nextarrayint64(s::Scan, length::Integer)
-	a = Array{Int64,1}(length)
+function nextarray{T<:Integer}(s::Scan, ::Type{T}, length::Integer)
+	a = Array{T,1}(length)
 	for i in 1:length
-        a[i] = nextint64(s)
+        a[i] = next(s, T)
     end
     a
 end
 
-function nextmatrixint64(s::Scan, nrows::Integer, ncols::Integer; rowmajor=true)
-    m = Array{Int64,2}(nrows, ncols)
+function nextmatrix{T}(s::Scan, ::Type{T}, nrows::Integer, ncols::Integer; rowmajor=true)
+    m = Array{T,2}(nrows, ncols)
     if rowmajor
         for i in 1:nrows
-            m[i,:] = nextarrayint64(s, ncols)
+            m[i,:] = nextarray(s, T, ncols)
         end
     else
         for i in 1:ncols
-            m[:,i] = nextarrayint64(s, nrows)
+            m[:,i] = nextarray(s, T, nrows)
         end
     end
     m
