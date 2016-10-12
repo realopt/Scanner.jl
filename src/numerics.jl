@@ -14,7 +14,7 @@ function next{T<:Integer}(s::Scan, ::Type{T}; hasnext = BoolWrap(false))
         b = read(s.is, UInt8)
         debug && println("first loop b $b")
         if (b >= _0 && b <= _9)  ||  b == _MINUS
-            if(b == '-')
+            if(b == _MINUS)
                 minus = true;
                 b = read(s.is, UInt8)
                 debug && println("minus reread b $b")
