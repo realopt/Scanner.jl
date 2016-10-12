@@ -1,6 +1,9 @@
 #using Scanner
+#workspace()
 include("../src/main.jl")
 include("../src/numerics.jl")
+include("../src/strings.jl")
+include("../src/containers.jl")
 
 s = Scan(string(dirname(@__FILE__), "/test.txt"))
 
@@ -8,9 +11,15 @@ s = Scan(string(dirname(@__FILE__), "/test.txt"))
 
 @show nextarray(s, Int64, 4)
 
-mat = nextmatrix(s, Int64, 2, 3, rowmajor=false)
+mat = nextmatrix(s, Int64, 2, 3, rowmajor=true)
 @show mat
 @show typeof(mat)
+
+for i in 1:10
+exp = next(s, Float64)
+@show exp
+end
+
 
 
 #
