@@ -22,13 +22,3 @@ function next(s::Scan, ::Type{String}; hasnext = BoolWrap(false))
 	exp = convert(String, join(charstring))
 end
 
-
-#
-# workspace()
-#
-# test = 0x36
-#
-# Char(test)
-#
-# @show typeof(Char(test))
-

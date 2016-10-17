@@ -2,8 +2,6 @@ _0 = 0x30
 _9 = 0x39
 _MINUS = 0x2D
 
-import Base.next
-
 function next{T<:Integer}(s::Scan, ::Type{T}; hasnext = BoolWrap(false))
     debug = false
     b = UInt8(0)
