@@ -12,9 +12,17 @@ function next(s::Scan, ::Type{String}; hasnext = BoolWrap(false))
 	while ( !eof(s.is) && is_space(b))
 		b = read(s.is, UInt8)
 	end
-	while ( !eof(s.is) && !is_space(b))
-		push!(charstring, Char(b))
-		b = read(s.is, UInt8)
+	while (true)
+        if !is_space(b)
+		    push!(charstring, Char(b))
+        else
+            break
+        end
+        if !eof(s.is)
+            b = read(s.is, UInt8)
+        else
+            break
+        end
 	end
 	if length(charstring) != 0
 		hasnext.val = true
