@@ -36,3 +36,16 @@ function nextmatrix{T}(s::Scan, ::Type{T}, nrows::Integer, ncols::Integer; rowma
     end
     m
 end
+
+function nextmatrix3D{T}(s::Scan, ::Type{T}, nrows::Integer, ncols::Integer, thirddim::Integer)
+    m = Array{T,3}(nrows, ncols, thirddim)
+    for i in 1:nrows
+		matrix = nextmatrix(s, T, ncols, thirddim)
+		if length(matrix) == 0
+			return Array{T,3}(0,0,0)
+		else
+        	m[i,:,:] = matrix
+		end
+    end
+    m
+end
