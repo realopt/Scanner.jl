@@ -36,16 +36,22 @@ function next{T<:Integer}(s::Scan, ::Type{T}; hasnext = BoolWrap(false))
     minus ? -num : num
 end
 
-#lazy float next to be improved
+# lazy float next. to be improved
 function next{T<:AbstractFloat}(s::Scan, ::Type{T}; hasnext = BoolWrap(false))
 	exp = next(s, String)
-	if exp != ""
-		hasnext.val = true
-		parse(T, exp)
-	else
-		hasnext.val = false
-		T(0)
-	end
+    while true
+    	if exp != ""
+    		hasnext.val = true
+            ret = tryparse(T, exp)
+    		if !isnull(ret)
+                return get(ret)
+            end
+    	else
+    		hasnext.val = false
+    		return T(0)
+    	end
+        exp = next(s, String)
+    end
 end
 
 
