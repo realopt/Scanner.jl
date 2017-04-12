@@ -7,7 +7,7 @@ A default data parser to ease the reading of the input data in the form that the
 To install please run the following command on Julia terminal
 
 ```
-Pkg.clone("git@gitlab.inria.fr:realopt/Scanner.jl.git")
+Pkg.clone("git@github.com:realopt/Scanner.jl.git")
 ```
 
 # Usage example 
