@@ -1,8 +1,9 @@
-# Scanner 
+# Scanner
 
 A default data parser to ease the reading of the input data in the form that they are often encountered in operational research.
 
 [![Build Status](https://travis-ci.org/realopt/Scanner.jl.svg?branch=master)](https://travis-ci.org/realopt/Scanner.jl)
+[![codecov](https://codecov.io/gh/realopt/Scanner.jl/master/graph/badge.svg)](https://codecov.io/gh/realopt/Scanner.jl)
 
 # Installation
 
@@ -12,7 +13,7 @@ To install please run the following command on Julia terminal
 Pkg.clone("git@github.com:realopt/Scanner.jl.git")
 ```
 
-# Usage example 
+# Usage example
 
 Assuming the given data file `test1.dat`
 
@@ -31,7 +32,7 @@ varcots = {24; 74; 31; 51; 84
 54; 64; 65; 89; 89}
 ```
 
-The following script 
+The following script
 
 ```julia
 using Scanner
