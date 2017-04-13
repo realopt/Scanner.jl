@@ -11,4 +11,5 @@ varcots = {24; 74; 31; 51; 84
 54; 72; 41; 12; 78
 54; 64; 65; 89; 89}
 
-coordofobjects = {34; 45; 67; 30; 40; 60;}
+ThreeDimCoords = {34; 45; 67; 30; 40; 60;}
+twoDimColMajorCoords = {25; 53; 37; 36; 45; 82}
