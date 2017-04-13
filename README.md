@@ -3,8 +3,7 @@
 A default data parser to ease the reading of the input data in the form that they are often encountered in operational research.
 
 [![Build Status](https://travis-ci.org/realopt/Scanner.jl.svg?branch=master)](https://travis-ci.org/realopt/Scanner.jl)
-[![codecov](https://codecov.io/gh/realopt/Scanner.jl/master/graph/badge.svg)](https://codecov.io/gh/realopt/Scanner.jl)
-
+[![codecov](https://codecov.io/gh/realopt/Scanner.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/realopt/Scanner.jl)
 # Installation
 
 To install please run the following command on Julia terminal

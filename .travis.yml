@@ -14,4 +14,4 @@ script:
   - julia -e 'Pkg.clone(pwd()); Pkg.build("Scanner"); Pkg.test("Scanner"; coverage=true)'
 
 after_success:
-  - julia -e 'cd(Pkg.dir("GraphTheoryMips")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
+  - julia -e 'cd(Pkg.dir("Scanner")); Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder())'
