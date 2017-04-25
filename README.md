@@ -4,6 +4,9 @@ A default data parser to ease the reading of the input data in the form that the
 
 [![Build Status](https://travis-ci.org/realopt/Scanner.jl.svg?branch=master)](https://travis-ci.org/realopt/Scanner.jl)
 [![codecov](https://codecov.io/gh/realopt/Scanner.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/realopt/Scanner.jl)
+[![Join the chat at https://gitter.im/realopt/Scanner.jl](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/realopt/Scanner.jl)
+
+
 # Installation
 
 To install please run the following command on Julia terminal
