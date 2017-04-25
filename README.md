@@ -1,5 +1,7 @@
 # Scanner
 
+[![Join the chat at https://gitter.im/realopt/Scanner.jl](https://badges.gitter.im/realopt/Scanner.jl.svg)](https://gitter.im/realopt/Scanner.jl?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A default data parser to ease the reading of the input data in the form that they are often encountered in operational research.
 
 [![Build Status](https://travis-ci.org/realopt/Scanner.jl.svg?branch=master)](https://travis-ci.org/realopt/Scanner.jl)
