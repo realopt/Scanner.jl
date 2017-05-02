@@ -30,3 +30,13 @@ function next(s::Scan, ::Type{String}; hasnext = BoolWrap(false))
 	exp = convert(String, join(charstring))
 end
 
+
+function nextline(s::Scan; eol = '\n')
+	charstring = Array{Char, 1}()
+	b = read(s.is, UInt8)
+	while(b != UInt8(eol) && !eof(s.is))
+		push!(charstring, Char(b))
+		b = read(s.is, UInt8)
+	end
+	exp = convert(String, join(charstring))
+end
