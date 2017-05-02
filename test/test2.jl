@@ -10,7 +10,6 @@ number102 = next(scan, Int)
 nl3 = nextline(scan)
 number103 = next(scan, Int)
 nl4 = nextline(scan)
-number104 = next(scan, Int)
 
 @test number100 == 100
 @test number101 == 101
