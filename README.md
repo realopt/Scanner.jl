@@ -14,6 +14,10 @@ To install please run the following command on Julia terminal
 ```
 Pkg.clone("git@github.com:realopt/Scanner.jl.git")
 ```
+or
+```
+Pkg.clone("https://github.com/realopt/Scanner.jl.git")
+```
 
 # Usage example
 
