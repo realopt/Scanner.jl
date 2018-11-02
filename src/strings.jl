@@ -1,4 +1,4 @@
-import Base.next
+# import Base.next
 
 function is_space(b::UInt8)
 	return !(b >= 0x21 && b <= 0x7E)

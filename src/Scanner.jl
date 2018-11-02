@@ -1,6 +1,6 @@
 module Scanner
 
-import Base.next
+# import Base.next
 
 export Scan, next, nextarray, nextmatrix, nextmatrix3D, nextline
 
