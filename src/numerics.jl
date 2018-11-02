@@ -2,12 +2,12 @@ _0 = 0x30
 _9 = 0x39
 _MINUS = 0x2D
 
-function next{T<:Integer}(s::Scan, ::Type{T}; hasnext = BoolWrap(false))
+function next(s::Scan, ::Type{T}; hasnext = BoolWrap(false)) where T <: Integer
     debug = false
     b = UInt8(0)
     num = T(0)
     minus = false
-	  hasnext.val = false
+	hasnext.val = false
     while !eof(s.is)
         b = read(s.is, UInt8)
         debug && println("first loop b $b")
@@ -39,14 +39,14 @@ function next{T<:Integer}(s::Scan, ::Type{T}; hasnext = BoolWrap(false))
 end
 
 # lazy float next. to be improved
-function next{T<:AbstractFloat}(s::Scan, ::Type{T}; hasnext = BoolWrap(false))
+function next(s::Scan, ::Type{T}; hasnext = BoolWrap(false)) where T <: AbstractFloat
 	exp = next(s, String)
     while true
     	if exp != ""
     		hasnext.val = true
             ret = tryparse(T, exp)
-    		if !isnull(ret)
-                return get(ret)
+    		if ret != nothing
+                return ret
             end
     	else
     		hasnext.val = false

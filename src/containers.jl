@@ -1,11 +1,10 @@
-
-function nextarray{T}(s::Scan, ::Type{T}, length::Integer)
-	a = Array{T,1}(length)
+function nextarray(s::Scan, ::Type{T}, length::Int) where T
+	a = Array{T,1}(undef, length)
 	for i in 1:length
 		check = BoolWrap(false)
 		elt = next(s, T, hasnext = check)
 		if !check.val
-			return Array{T,1}(0)
+			return Array{T,1}(undef, 0)
 		else
         	a[i] = elt
 		end
@@ -13,13 +12,13 @@ function nextarray{T}(s::Scan, ::Type{T}, length::Integer)
     a
 end
 
-function nextmatrix{T}(s::Scan, ::Type{T}, nrows::Integer, ncols::Integer; rowmajor=true)
-    m = Array{T,2}(nrows, ncols)
+function nextmatrix(s::Scan, ::Type{T}, nrows::Int, ncols::Int; rowmajor=true) where T
+    m = Array{T,2}(undef, nrows, ncols)
     if rowmajor
         for i in 1:nrows
 			array = nextarray(s, T, ncols)
 			if length(array) == 0
-				return Array{T,2}(0,0)
+				return Array{T,2}(undef, 0, 0)
 			else
             	m[i,:] = array
 			end
@@ -28,7 +27,7 @@ function nextmatrix{T}(s::Scan, ::Type{T}, nrows::Integer, ncols::Integer; rowma
         for i in 1:ncols
 			array = nextarray(s, T, nrows)
 			if length(array) == 0
-				return Array{T,2}(0,0)
+				return Array{T,2}(undef, 0, 0)
 			else
 				m[:,i] = array
 			end
@@ -37,12 +36,12 @@ function nextmatrix{T}(s::Scan, ::Type{T}, nrows::Integer, ncols::Integer; rowma
     m
 end
 
-function nextmatrix3D{T}(s::Scan, ::Type{T}, nrows::Integer, ncols::Integer, thirddim::Integer)
-    m = Array{T,3}(nrows, ncols, thirddim)
+function nextmatrix3D(s::Scan, ::Type{T}, nrows::Int, ncols::Int, thirddim::Int) where T
+    m = Array{T,3}(undef, nrows, ncols, thirddim)
     for i in 1:nrows
 		matrix = nextmatrix(s, T, ncols, thirddim)
 		if length(matrix) == 0
-			return Array{T,3}(0,0,0)
+			return Array{T,3}(undef, 0,0,0)
 		else
         	m[i,:,:] = matrix
 		end
