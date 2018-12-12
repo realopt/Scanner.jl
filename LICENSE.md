@@ -1,3 +1,5 @@
+Copyright (c) 2017: RealOpt team (INRIA - Bordeaux university - CNRS)
+
 The Scanner Julia package is licensed under the **[MPL]** version 2.0:
 
 [MPL]: https://www.mozilla.org/MPL/2.0/
