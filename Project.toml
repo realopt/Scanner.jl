@@ -1,0 +1,4 @@
+name = "Scanner"
+uuid = "d6431348-6a76-11e9-1721-dff2f7d1e522"
+authors = ["Vitor Nesello <vitornesello@gmail.com>"]
+version = "0.1.0"
