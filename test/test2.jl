@@ -1,15 +1,13 @@
-using Scanner
-
-scan = Scan(dirname(@__FILE__)* "/test2.dat")
-number100 = next(scan, Int)
-nl0 = nextline(scan)
-number101 = next(scan, Int)
-nl1 = nextline(scan)
-nl2 = nextline(scan)
-number102 = next(scan, Int)
-nl3 = nextline(scan)
-number103 = next(scan, Int)
-nl4 = nextline(scan)
+scan = Scanner.Scan(dirname(@__FILE__)* "/test2.dat")
+number100 = Scanner.next(scan, Int)
+nl0 = Scanner.nextline(scan)
+number101 = Scanner.next(scan, Int)
+nl1 = Scanner.nextline(scan)
+nl2 = Scanner.nextline(scan)
+number102 = Scanner.next(scan, Int)
+nl3 = Scanner.nextline(scan)
+number103 = Scanner.next(scan, Int)
+nl4 = Scanner.nextline(scan)
 
 @test number100 == 100
 @test number101 == 101
